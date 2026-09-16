@@ -1,6 +1,10 @@
 const revealItems = document.querySelectorAll(".reveal");
 const navLinks = document.querySelectorAll(".nav-links a");
 const skillsCarousel = document.querySelector(".skills-carousel");
+const certificateCards = document.querySelectorAll(".certificate-card");
+const certModal = document.querySelector(".cert-modal");
+const certModalImage = document.querySelector(".cert-modal img");
+const certModalClose = document.querySelector(".cert-modal-close");
 const trackedSections = ["profil", "skills", "nachweis"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
@@ -84,6 +88,53 @@ if (skillsCarousel && !skillsCarousel.dataset.looped) {
   });
   skillsCarousel.dataset.looped = "true";
 }
+
+const closeCertificateModal = () => {
+  if (!certModal || !certModalImage) return;
+
+  certModal.classList.remove("is-open");
+  certModal.setAttribute("aria-hidden", "true");
+  certModalImage.src = "";
+  certModalImage.alt = "";
+  document.body.classList.remove("modal-open");
+};
+
+const openCertificateModal = (card) => {
+  if (!certModal || !certModalImage) return;
+
+  const image = card.querySelector("img");
+  if (!image) return;
+
+  certModalImage.src = image.src;
+  certModalImage.alt = image.alt;
+  certModal.classList.add("is-open");
+  certModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  certModalClose?.focus();
+};
+
+certificateCards.forEach((card) => {
+  card.addEventListener("click", () => openCertificateModal(card));
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openCertificateModal(card);
+    }
+  });
+});
+
+certModalClose?.addEventListener("click", closeCertificateModal);
+certModal?.addEventListener("click", (event) => {
+  if (event.target === certModal) {
+    closeCertificateModal();
+  }
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && certModal?.classList.contains("is-open")) {
+    closeCertificateModal();
+  }
+});
 
 requestAnimationFrame(() => {
   const currentHash = window.location.hash.replace("#", "");
