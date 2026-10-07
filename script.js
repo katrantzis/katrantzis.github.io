@@ -5,7 +5,7 @@ const certificateCards = document.querySelectorAll(".certificate-card");
 const certModal = document.querySelector(".cert-modal");
 const certModalImage = document.querySelector(".cert-modal img");
 const certModalClose = document.querySelector(".cert-modal-close");
-const trackedSections = ["profil", "skills", "nachweis"]
+const trackedSections = ["skills", "nachweis"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 let navTicking = false;
