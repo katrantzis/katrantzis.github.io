@@ -1,11 +1,10 @@
 const revealItems = document.querySelectorAll(".reveal");
 const navLinks = document.querySelectorAll(".nav-links a");
-const skillsCarousel = document.querySelector(".skills-carousel");
 const certificateCards = document.querySelectorAll(".certificate-card");
 const certModal = document.querySelector(".cert-modal");
 const certModalImage = document.querySelector(".cert-modal img");
 const certModalClose = document.querySelector(".cert-modal-close");
-const trackedSections = ["skills", "nachweis"]
+const trackedSections = ["interessen", "module", "nachweis"]
   .map((id) => document.getElementById(id))
   .filter(Boolean);
 let navTicking = false;
@@ -78,16 +77,6 @@ navLinks.forEach((link) => {
     }
   });
 });
-
-if (skillsCarousel && !skillsCarousel.dataset.looped) {
-  const cards = Array.from(skillsCarousel.children);
-  cards.forEach((card) => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    skillsCarousel.appendChild(clone);
-  });
-  skillsCarousel.dataset.looped = "true";
-}
 
 const closeCertificateModal = () => {
   if (!certModal || !certModalImage) return;
