@@ -305,37 +305,79 @@ h2 {
   text-align: center;
 }
 
-.module-list {
-  max-width: 920px;
+.modules-description {
+  max-width: 620px;
   margin: 0 auto;
-  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.module-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 1040px;
+  margin: 42px auto 0;
+  text-align: left;
 }
 
 .module-list article {
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr) auto;
-  gap: 18px;
-  align-items: center;
-  padding: 22px 0;
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px 12px;
+  align-content: start;
+  min-height: 112px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #ffffff;
   text-align: left;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.module-list article:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 113, 227, 0.28);
+  box-shadow: 0 12px 28px rgba(29, 29, 31, 0.06);
 }
 
 .module-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--soft);
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.76rem;
   font-weight: 800;
 }
 
 .module-list strong {
-  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
-  line-height: 1.15;
+  align-self: center;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
 }
 
 .module-list em {
-  color: var(--muted);
+  display: inline-flex;
+  grid-column: 2;
+  align-items: center;
+  gap: 7px;
+  color: #397456;
+  font-size: 0.78rem;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
+}
+
+.module-list em i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #397456;
 }
 
 .proof-section {
@@ -681,7 +723,7 @@ h2 {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) {\n  .module-list {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }
   .proof-section,
   .certificates {
     grid-template-columns: 1fr;
@@ -722,7 +764,7 @@ h2 {
 
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px) {\n  .module-list {\n    grid-template-columns: 1fr;\n    gap: 9px;\n    margin-top: 28px;\n  }\n\n  .module-list article {\n    grid-template-columns: 30px minmax(0, 1fr);\n    min-height: auto;\n    padding: 16px;\n  }
   .top-nav {
     top: 10px;
     gap: 3px;
