@@ -1,6 +1,6 @@
 const revealItems = document.querySelectorAll(".reveal");
 const navLinks = document.querySelectorAll(".nav-links a");
-const certificateCards = document.querySelectorAll(".certificate-card");
+const certificateCards = document.querySelectorAll(".certificate-tile");
 const certModal = document.querySelector(".cert-modal");
 const certModalImage = document.querySelector(".cert-modal img");
 const certModalClose = document.querySelector(".cert-modal-close");
@@ -91,11 +91,12 @@ const closeCertificateModal = () => {
 const openCertificateModal = (card) => {
   if (!certModal || !certModalImage) return;
 
-  const image = card.querySelector("img");
-  if (!image) return;
+  const imagePath = card.dataset.certificateSrc;
+  const imageAlt = card.dataset.certificateAlt;
+  if (!imagePath) return;
 
-  certModalImage.src = image.src;
-  certModalImage.alt = image.alt;
+  certModalImage.src = imagePath;
+  certModalImage.alt = imageAlt || "Zertifikat";
   certModal.classList.add("is-open");
   certModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
