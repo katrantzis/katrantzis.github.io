@@ -369,6 +369,11 @@ h2 {
 }
 
 .certificate-tile {
+  appearance: none;
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -402,20 +407,17 @@ h2 {
   backdrop-filter: none;
 }
 
-.certificate-tile .certificate-label span {
+.certificate-arrow {
   display: inline-block;
   margin-left: 8px;
   color: var(--blue);
   transition: transform 180ms ease;
 }
 
-.certificate-tile:hover .certificate-label span {
+.certificate-tile:hover .certificate-arrow {
   transform: translate(2px, -2px);
 }
 
-.certificate-tile img {
-  display: none;
-}
 
 .certificate-card {
   position: relative;
