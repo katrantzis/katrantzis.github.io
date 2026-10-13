@@ -308,45 +308,26 @@ h2 {
 .module-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0 28px;
+  column-gap: 28px;
   max-width: 1080px;
-  margin: 34px auto 0;
+  margin: 0 auto;
   border-top: 1px solid var(--line);
   text-align: left;
 }
 
 .module-list article {
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 12px;
+  display: flex;
   align-items: center;
-  min-height: 86px;
+  min-height: 78px;
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
   text-align: left;
-}
-
-.module-list span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--soft);
-  color: var(--muted);
-  font-size: 0.76rem;
-  font-weight: 800;
 }
 
 .module-list strong {
   font-size: 0.98rem;
   line-height: 1.4;
   font-weight: 700;
-}
-
-.module-list em {
-  display: none;
 }
 
 .proof-section {
@@ -695,9 +676,9 @@ h2 {
 @media (max-width: 900px) {
   .module-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 22px;
+    column-gap: 22px;
   }
-\n  .module-list {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }
+
   .proof-section,
   .certificates {
     grid-template-columns: 1fr;
@@ -741,15 +722,13 @@ h2 {
 @media (max-width: 640px) {
   .module-list {
     grid-template-columns: 1fr;
-    gap: 0;
-    margin-top: 22px;
   }
 
   .module-list article {
-    min-height: 70px;
+    min-height: 66px;
     padding: 14px 0;
   }
-\n  .module-list {\n    grid-template-columns: 1fr;\n    gap: 9px;\n    margin-top: 28px;\n  }\n\n  .module-list article {\n    grid-template-columns: 30px minmax(0, 1fr);\n    min-height: auto;\n    padding: 16px;\n  }
+
   .top-nav {
     top: 10px;
     gap: 3px;
@@ -826,14 +805,7 @@ h2 {
     min-height: 40px;
   }
 
-  .module-list article {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  .certificates {
+.certificates {
     gap: 14px;
   }
 
