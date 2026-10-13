@@ -318,10 +318,11 @@ h2 {
 .module-list article {
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 78px;
-  padding: 16px 0;
+  padding: 16px 12px;
   border-bottom: 1px solid var(--line);
-  text-align: left;
+  text-align: center;
 }
 
 .module-list strong {
