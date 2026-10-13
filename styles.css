@@ -305,41 +305,25 @@ h2 {
   text-align: center;
 }
 
-.modules-description {
-  max-width: 620px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
 .module-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  max-width: 1040px;
-  margin: 42px auto 0;
+  gap: 0 28px;
+  max-width: 1080px;
+  margin: 34px auto 0;
+  border-top: 1px solid var(--line);
   text-align: left;
 }
 
 .module-list article {
   display: grid;
-  grid-template-columns: 34px minmax(0, 1fr);
-  gap: 10px 12px;
-  align-content: start;
-  min-height: 112px;
-  padding: 20px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: #ffffff;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 86px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
   text-align: left;
-  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
-}
-
-.module-list article:hover {
-  transform: translateY(-2px);
-  border-color: rgba(0, 113, 227, 0.28);
-  box-shadow: 0 12px 28px rgba(29, 29, 31, 0.06);
 }
 
 .module-list span {
@@ -348,7 +332,7 @@ h2 {
   justify-content: center;
   width: 30px;
   height: 30px;
-  border-radius: 9px;
+  border-radius: 50%;
   background: var(--soft);
   color: var(--muted);
   font-size: 0.76rem;
@@ -356,28 +340,13 @@ h2 {
 }
 
 .module-list strong {
-  align-self: center;
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.4;
   font-weight: 700;
 }
 
 .module-list em {
-  display: inline-flex;
-  grid-column: 2;
-  align-items: center;
-  gap: 7px;
-  color: #397456;
-  font-size: 0.78rem;
-  font-style: normal;
-  font-weight: 700;
-}
-
-.module-list em i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #397456;
+  display: none;
 }
 
 .proof-section {
@@ -723,7 +692,12 @@ h2 {
   }
 }
 
-@media (max-width: 900px) {\n  .module-list {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }
+@media (max-width: 900px) {
+  .module-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 22px;
+  }
+\n  .module-list {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }
   .proof-section,
   .certificates {
     grid-template-columns: 1fr;
@@ -764,7 +738,18 @@ h2 {
 
 }
 
-@media (max-width: 640px) {\n  .module-list {\n    grid-template-columns: 1fr;\n    gap: 9px;\n    margin-top: 28px;\n  }\n\n  .module-list article {\n    grid-template-columns: 30px minmax(0, 1fr);\n    min-height: auto;\n    padding: 16px;\n  }
+@media (max-width: 640px) {
+  .module-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 22px;
+  }
+
+  .module-list article {
+    min-height: 70px;
+    padding: 14px 0;
+  }
+\n  .module-list {\n    grid-template-columns: 1fr;\n    gap: 9px;\n    margin-top: 28px;\n  }\n\n  .module-list article {\n    grid-template-columns: 30px minmax(0, 1fr);\n    min-height: auto;\n    padding: 16px;\n  }
   .top-nav {
     top: 10px;
     gap: 3px;
