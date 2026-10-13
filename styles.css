@@ -599,7 +599,7 @@ h2 {
 
 .proof-copy p {
   max-width: 640px;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 
 .contact-section {
@@ -707,7 +707,7 @@ h2 {
   }
 
   .proof-copy {
-    text-align: center;
+    text-align: left;
   }
 
   .certificates {
