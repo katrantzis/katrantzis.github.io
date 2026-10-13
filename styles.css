@@ -429,6 +429,10 @@ h2 {
   outline-offset: 5px;
 }
 
+.certificate-card.certificate-tile img {
+  display: none;
+}
+
 .certificate-card img {
   display: block;
   width: 100%;
