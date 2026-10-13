@@ -320,13 +320,29 @@ h2 {
   justify-content: flex-start;
   min-height: 76px;
   padding: 18px 0;
-  border-bottom: 1px solid var(--line);
+  position: relative;
   text-align: left;
   transition: color 180ms ease;
 }
 
+.module-list article::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 42%;
+  height: 1px;
+  background: var(--line);
+  transition: width 180ms ease, background-color 180ms ease;
+}
+
 .module-list article:hover {
   color: var(--blue);
+}
+
+.module-list article:hover::after {
+  width: 58%;
+  background: rgba(0, 113, 227, 0.35);
 }
 
 .module-list strong {
