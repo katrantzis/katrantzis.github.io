@@ -300,9 +300,9 @@ h2 {
 }
 
 .section-intro {
-  max-width: 1080px;
+  max-width: 900px;
   margin: 0 auto 26px;
-  text-align: left;
+  text-align: center;
 }
 
 .module-list {
@@ -364,7 +364,7 @@ h2 {
 .proof-copy {
   width: min(100%, 900px);
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 .certificates {
