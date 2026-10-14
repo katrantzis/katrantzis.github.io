@@ -365,6 +365,7 @@ h2 {
   width: min(100%, 900px);
   margin: 0 auto;
   text-align: center;
+  justify-self: center;
 }
 
 .certificates {
@@ -800,7 +801,7 @@ h2 {
   }
 
   .proof-copy {
-    text-align: left;
+    text-align: center;
   }
 
   .certificates {
