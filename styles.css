@@ -410,6 +410,16 @@ h2 {
   transition: background 200ms ease, border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
+.certificate-tile.certificate-featured {
+  border-color: rgba(0, 113, 227, 0.22);
+  background: linear-gradient(135deg, #edf6ff 0%, #f7faff 58%, #ffffff 100%);
+  box-shadow: 0 8px 24px rgba(0, 91, 180, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.certificate-tile.certificate-featured .certificate-arrow {
+  background: rgba(0, 113, 227, 0.14);
+}
+
 .certificate-tile:hover {
   background: linear-gradient(145deg, #ffffff 0%, #eef6ff 100%);
   border-color: rgba(0, 113, 227, 0.28);
